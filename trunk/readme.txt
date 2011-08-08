@@ -25,6 +25,7 @@ ToDo:
 
 * Manage default menu items.
 * Make everything work with MultiSite
+* Ajax Login / popup notification/error messages
 
 == Installation ==
 
@@ -58,7 +59,7 @@ In the admin area of your site, click "Menus" under the "Appearance" menu. Creat
 Do you have WP3.1 installed?
 Have you opted to NOT show the admin bar within your user profile settings?
 Is jQuery loading properly?
-Did you try to hover over the top left corner of your site?
+Did you try to hover over the top center of your site to see if the Show/Hide button appears?
 
 
 == ChangeLog ==
