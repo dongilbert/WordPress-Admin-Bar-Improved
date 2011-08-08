@@ -1,0 +1,45 @@
+/******
+CSS File for the WordPress Admin Bar Improved Plugin
+http://www.electriceasel.com/wpabi
+******/
+#wpadminbar #adminbarlogin .adminbar-input {
+    -moz-border-radius: 0 0 0 0;
+    -moz-box-shadow: 2px 2px 1px #CDCDCD inset;
+    -webkit-box-shadow: 2px 2px 1px #CDCDCD inset;
+    -moz-box-sizing: border-box;
+    background: none repeat scroll 0 0 #DDDDDD;
+    border: 1px solid #626262;
+    color: #555555;
+    float: left;
+    font: 12px Arial,Helvetica,sans-serif;
+    height: auto;
+    margin: 0 3px 0 0;
+    outline: medium none;
+    padding: 2px 3px;
+    text-shadow: 0 1px 0 #FFFFFF;
+    width: 140px;
+}
+#wpadminbar #adminbarlogin .adminbar-button {
+    border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    background: -moz-linear-gradient(center bottom , #AAAAAA, #CECECE) repeat scroll 0 0 transparent;
+    background:-webkit-gradient(linear,left bottom,left top,from(#AAA),to(#CECECE));
+    border: 1px solid #626262;
+    color: #444444;
+    cursor: pointer;
+    float: left;
+    font: bold 12px Arial,Helvetica,sans-serif;
+    height: auto;
+    margin: 0;
+    padding: 2px 13px;
+    text-shadow: 0 1px 0 #EEEEEE;
+    width: auto;
+}
+#wpadminbar #adminbarlogin {
+    float: left;
+    height: 18px;
+    margin: 0;
+    padding: 3px;
+}
+
