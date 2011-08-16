@@ -62,6 +62,29 @@ jQuery(document).ready(function($){
 	$('#wpabi_close').click(function(){
 		$('#wpabi_ajax').fadeOut(300);
 	});
+	
+	$('#adminbarlogin').submit(function(event){
+		
+		event.preventDefault();
+		
+		var wpabi_log = $('#adminbarlogin-log').val();
+		var wpabi_pwd = $('#adminbarlogin-pwd').val();
+		var wpabi_rememberme = $('#rememberme').val();
+		
+		$.post('index.php',{
+				log: wpabi_log,
+				pwd: wpabi_pwd,
+				rememberme: wpabi_rememberme,
+				wpabi_ajax: 'true'
+			},
+			function(data){
+				if(data != 'error')
+				{
+					$('#wpadminbar').html(data);
+				}
+			}
+		);
+	});
 });
 
 if(jQuery().cookie){}else{

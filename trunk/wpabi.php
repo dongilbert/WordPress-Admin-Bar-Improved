@@ -5,7 +5,7 @@
 Plugin Name:  WordPress Admin Bar Improved
 Plugin URI:   http://www.electriceasel.com/wpabi
 Description:  A set of custom tweaks to the WordPress Admin Bar that was introduced in WP3.1
-Version:      3.2.3
+Version:      3.3
 Author:       dilbert4life, electriceasel
 Author URI:   http://www.electriceasel.com/team-member/don-gilbert
 
@@ -29,7 +29,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 **************************************************************************/
 
 class WPAdminBarImproved {
-	private $version = '3.2.3';
+	private $version = '3.3';
 	private $css_file;
 	private $js_file;
 	private $editing_file;
@@ -55,7 +55,7 @@ class WPAdminBarImproved {
 		$this->options = get_option('wpabi_options');
 		
 		$this->show_form = ($this->options['show_form'] === 'yes') ? true : false;
-		$this->do_ajax = ($this->options['ajax_search'] === 'yes') ? true : false;
+		$this->do_ajax = ($this->options['ajax_search'] === 'yes' || $this->options['ajax_login'] === 'yes') ? true : false;
 		$this->reg_link = ($this->options['reg_link'] === 'yes') ? true : false;
 		$this->toggleme = ($this->options['hide_admin_bar'] === 'yes') ? true : false;
 		$this->custom_menu = ($this->options['custom_menu'] === 'yes') ? true : false;
@@ -213,6 +213,29 @@ class WPAdminBarImproved {
 		}
 	}
 	
+	public function ajax_login()
+	{
+		if(isset($_POST['wpabi_ajax']) && isset($_POST['log']) && isset($_POST['pwd']))
+		{
+			if(!$this->do_ajax)
+			{
+				die();
+			}
+			
+			$user = wp_signon();
+			if(is_wp_error($user))
+			{
+				echo 'error';
+				die();
+			}
+			global $current_user, $user_identity;
+			$current_user = $user;
+			$user_identity = $current_user->data->display_name;
+			wp_admin_bar_render();
+			die();
+		}
+	}
+	
 	private function which_file()
 	{
 		if(isset($_GET['wpabi_edit']))
@@ -289,12 +312,18 @@ class WPAdminBarImproved {
             		<label>Show Login Form?</label>
                 	<input type="radio" name="wpabi_options[show_form]" value="yes" <?php checked($this->options['show_form'], 'yes') ?>/><span>Yes</span>
                 	<input type="radio" name="wpabi_options[show_form]" value="no" <?php checked($this->options['show_form'], 'no') ?>/><span>No</span>
-            	</li>        		<li>
+            	</li>
+        		<li>
             		<label>Ajax Search</label>
                 	<input type="radio" name="wpabi_options[ajax_search]" value="yes" <?php checked($this->options['ajax_search'], 'yes') ?>/><span>Enabled</span>
                 	<input type="radio" name="wpabi_options[ajax_search]" value="no" <?php checked($this->options['ajax_search'], 'no') ?>/><span>Disabled</span>
             	</li>
-        	<li>
+        		<li>
+            		<label>Ajax Login</label>
+                	<input type="radio" name="wpabi_options[ajax_login]" value="yes" <?php checked($this->options['ajax_login'], 'yes') ?>/><span>Enabled</span>
+                	<input type="radio" name="wpabi_options[ajax_login]" value="no" <?php checked($this->options['ajax_login'], 'no') ?>/><span>Disabled</span>
+            	</li>
+        		<li>
             		<label>Show/Hide Button</label>
                 	<input type="radio" name="wpabi_options[hide_admin_bar]" value="yes" <?php checked($this->options['hide_admin_bar'], 'yes') ?>/><span>Enabled</span>
                 	<input type="radio" name="wpabi_options[hide_admin_bar]" value="no" <?php checked($this->options['hide_admin_bar'], 'no') ?>/><span>Disabled</span>

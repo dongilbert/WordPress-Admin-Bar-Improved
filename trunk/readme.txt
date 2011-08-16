@@ -3,7 +3,7 @@ Contributors: dilbert4life, electriceasel
 Tags: admin bar, top, login form, 3.1+, ajax, search
 Requires at least: 3.1
 Tested up to: 3.2.1
-Stable tag: 3.2.3
+Stable tag: 3.3
 
 A set of custom tweaks to the WordPress Admin Bar that was introduced in WP3.1.
 
@@ -25,7 +25,7 @@ ToDo:
 
 * Manage default menu items.
 * Make everything work with MultiSite
-* Ajax Login / popup notification/error messages
+* Popup notification/error messages
 
 == Installation ==
 
@@ -63,6 +63,9 @@ Did you try to hover over the top center of your site to see if the Show/Hide bu
 
 
 == ChangeLog ==
+
+= 3.3 =
+* Added ajax login feature.
 
 = 3.2.3 =
 * Show/hide feature now persists across pages. Utilizes jQuery.cookie.
