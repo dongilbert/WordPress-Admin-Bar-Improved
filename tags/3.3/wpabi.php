@@ -410,4 +410,4 @@ class WPAdminBarImproved {
 
 // Start this plugin once all other files and plugins are fully loaded
 add_action( 'plugins_loaded', create_function( '', 'global $WPAdminBarImproved; $WPAdminBarImproved = new WPAdminBarImproved();' ), 15 );
-add_action( 'wp_loaded', create_function( '', 'global $WPAdminBarImproved; $WPAdminBarImproved->ajax_search();' ), 15 );
+add_action( 'wp_loaded', create_function( '', 'global $WPAdminBarImproved; $WPAdminBarImproved->ajax_search(); $WPAdminBarImproved->ajax_login();' ), 15 );
