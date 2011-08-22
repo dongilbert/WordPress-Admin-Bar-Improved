@@ -16,10 +16,17 @@ Check the post on this plugin over at our site, [Electric Easel](http://www.elec
 Features:
 
 * Easy Interface using WP3.0 Menus to add custom menu items to your Admin Bar.
+<<<<<<< HEAD
 * Displays a Login form on the front end of your site in the WP Admin Bar.
 * Ajax Search Popup in from Admin Bar Search Form
 * Manage default menu items.
 * Ability to Show or Hide the admin bar by clicking the Show/Hide Box that appears below the top left corner of the admin bar
+=======
+* Displays a login form on the front end of your site in the WP Admin Bar.
+* Ajax Login
+* Ajax Search from form in admin bar
+* Ability to show or hide the admin bar by clicking the Show/Hide box that appears below the center of the admin bar
+>>>>>>> cb625136c24b83a4c23b49288bd751f3969e7d9e
 * More to come...
 
 ToDo:
@@ -33,7 +40,7 @@ Use the built in WordPress Plugin Installer via Plugins -> Add New, searching fo
 
 OR
 
-Extract all files from the ZIP file, making sure to keep the file structure intact, and then upload the plugin's folder to `/wp-content/plugins/`.
+Extract all files from the ZIP file, making sure to keep the file structure intact, and then upload the plugin's folder to `/wp-content/plugins/` via FTP.
 
 This should result in the following file structure:
 
@@ -48,17 +55,25 @@ This should result in the following file structure:
             | wpabi.js
             | wpabi.php`
 
-Then just visit your admin area and activate the plugin.
+Then just visit your admin area and activate the plugin on the Plugins screen.
 
 == Frequently Asked Questions ==
 
+<<<<<<< HEAD
 = HELP! Something got messed up! = 
 
 You can reset the settings for WordPress Admin Bar Improved by simply deactivation and then re-activating the plugin through the Plugin Admin interface.
 
 = How to add menu items = 
+=======
+= How to change the settings? =
+>>>>>>> cb625136c24b83a4c23b49288bd751f3969e7d9e
 
-In the admin area of your site, click "Menus" under the "Appearance" menu. Create a new menu named `WPABI` or something like that. Add whatever menu items you want to it, and save the menu. In the box titled "Theme Locations", select the menu you created in the `Admin Bar Improved` dropdown select list, and hit save. After that, your menu items will appear in your admin bar!
+In your WordPress admin dashboard, click the Settings -> WPABI menu item. (Taking suggestions for a better menu name.)
+
+= How to add menu items? = 
+
+In the admin area of your site, click "Menus" under the "Appearance" menu. Create a new menu named `WPABI` or something like that. Add whatever menu items you want to it, and save the menu. In the box titled "Theme Locations" on the "Menus" screen, select the menu you created in the `Admin Bar Improved` dropdown select list, and hit save. After that, your menu items will appear in your admin bar for both logged in and logged out users.!
 
 = It's not working! =
 
