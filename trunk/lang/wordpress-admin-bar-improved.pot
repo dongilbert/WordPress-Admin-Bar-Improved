@@ -1,0 +1,143 @@
+# Copyright (C) 2010 
+# This file is distributed under the same license as the  package.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/wordpress-admin-bar-improved\n"
+"POT-Creation-Date: 2011-08-22 14:06:48+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2011-08-22 09:20-0600\n"
+"Last-Translator: Don Gilbert <don@dongilbert.net>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: wpabi.php:170
+#: wpabi.php:349
+msgid "Admin Bar Improved"
+msgstr "Admin Bar Improved"
+
+#: wpabi.php:214
+msgid "Username"
+msgstr "Username"
+
+#: wpabi.php:215
+msgid "Password"
+msgstr "Password"
+
+#: wpabi.php:216
+msgid "Login"
+msgstr "Login"
+
+#: wpabi.php:219
+msgid "Remember me"
+msgstr "Remember me"
+
+#: wpabi.php:220
+msgid "Lost your password?"
+msgstr "Lost your password?"
+
+#: wpabi.php:223
+msgid "Register"
+msgstr "Register"
+
+#: wpabi.php:271
+msgid "no results found"
+msgstr "no results found"
+
+#: wpabi.php:271
+msgid "Please enter another search term."
+msgstr "Please enter another search term."
+
+#: wpabi.php:349
+msgid "WordPress Admin Bar Improved"
+msgstr "WordPress Admin Bar Improved"
+
+#: wpabi.php:394
+msgid "Admin Bar for logged out users"
+msgstr "Admin Bar for logged out users"
+
+#: wpabi.php:402
+msgid "Login Form in Admin Bar"
+msgstr "Login Form in Admin Bar"
+
+#: wpabi.php:410
+msgid "Ajax Login"
+msgstr "Ajax Login"
+
+#: wpabi.php:418
+msgid "Ajax Search"
+msgstr "Ajax Search"
+
+#: wpabi.php:426
+msgid "Show/Hide Button"
+msgstr "Show/Hide Button"
+
+#: wpabi.php:434
+msgid "Registration Link in Form"
+msgstr "Registration Link in Form"
+
+#: wpabi.php:442
+msgid "Custom Menu Items"
+msgstr "Custom Menu Items"
+
+#: wpabi.php:447
+msgid "When you enable this option, you will get a new location added to your \"Theme Locations\" box on your Appearance -> Menus admin page called \"Admin Bar Improved.\" Use this as you would any other menu location for your site. Create a new menu on the Menus admin page, and name it whatever you'd like, just keep it easy to identify. Add whatever items to that menu that you want. Nested menu items will work as expected. When you're finished, select the menu you created from the select list under the \"Admin Bar Improved\" theme location. Once completed, (and once you refresh the page, or navigate to another page) you will see that the items you added are now in your admin bar. Good job!"
+msgstr "When you enable this option, you will get a new location added to your \"Theme Locations\" box on your Appearance -> Menus admin page called \"Admin Bar Improved.\" Use this as you would any other menu location for your site. Create a new menu on the Menus admin page, and name it whatever you'd like, just keep it easy to identify. Add whatever items to that menu that you want. Nested menu items will work as expected. When you're finished, select the menu you created from the select list under the \"Admin Bar Improved\" theme location. Once completed, (and once you refresh the page, or navigate to another page) you will see that the items you added are now in your admin bar. Good job!"
+
+#: wpabi.php:452
+msgid "My Account"
+msgstr "My Account"
+
+#: wpabi.php:460
+msgid "Visit Site (backend only)"
+msgstr "Visit Site (backend only)"
+
+#: wpabi.php:468
+msgid "Dashboard (frontend only)"
+msgstr "Dashboard (frontend only)"
+
+#: wpabi.php:476
+msgid "My Sites"
+msgstr "My Sites"
+
+#: wpabi.php:484
+msgid "Add New"
+msgstr "Add New"
+
+#: wpabi.php:492
+msgid "Comments"
+msgstr "Comments"
+
+#: wpabi.php:500
+msgid "Appearance"
+msgstr "Appearance"
+
+#: wpabi.php:508
+msgid "Edit"
+msgstr "Edit"
+
+#: wpabi.php:516
+msgid "Shortlink"
+msgstr "Shortlink"
+
+#: wpabi.php:524
+msgid "Updates"
+msgstr "Updates"
+
+#: wpabi.php:533
+msgid "Save Options"
+msgstr "Save Options"
+
+#: wpabi.php:549
+msgid "Edit the CSS/JS for the Admin Bar and the Ajax Search below."
+msgstr "Edit the CSS/JS for the Admin Bar and the Ajax Search below."
+
+#: wpabi.php:555
+msgid "Update File"
+msgstr "Update File"
+
+#: wpabi.php:589
+msgid "File edited successfully."
+msgstr "File edited successfully."
+
