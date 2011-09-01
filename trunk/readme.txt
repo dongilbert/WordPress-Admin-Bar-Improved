@@ -16,20 +16,10 @@ Check the post on this plugin over at our site, [Electric Easel](http://www.elec
 Features:
 
 * Easy Interface using WP3.0 Menus to add custom menu items to your Admin Bar.
-<<<<<<< HEAD
-* Displays a Login form on the front end of your site in the WP Admin Bar.
-* Ajax Search Popup in from Admin Bar Search Form
-* Manage default menu items.
-* Ability to Show or Hide the admin bar by clicking the Show/Hide Box that appears below the top left corner of the admin bar
-=======
 * Displays a login form on the front end of your site in the WP Admin Bar.
 * Ajax Login
 * Ajax Search from form in admin bar
 * Ability to show or hide the admin bar by clicking the Show/Hide box that appears below the center of the admin bar
-<<<<<<< HEAD
-=======
->>>>>>> cb625136c24b83a4c23b49288bd751f3969e7d9e
->>>>>>> c1ff7b4d206aec59d5e6b94b5f113a5b9fe0add1
 * More to come...
 
 ToDo:
@@ -62,22 +52,11 @@ Then just visit your admin area and activate the plugin on the Plugins screen.
 
 == Frequently Asked Questions ==
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> c1ff7b4d206aec59d5e6b94b5f113a5b9fe0add1
 = HELP! Something got messed up! = 
 
 You can reset the settings for WordPress Admin Bar Improved by simply deactivation and then re-activating the plugin through the Plugin Admin interface.
 
-<<<<<<< HEAD
 = How to change the settings? =
-=======
-= How to add menu items = 
-=======
-= How to change the settings? =
->>>>>>> cb625136c24b83a4c23b49288bd751f3969e7d9e
->>>>>>> c1ff7b4d206aec59d5e6b94b5f113a5b9fe0add1
 
 In your WordPress admin dashboard, click the Settings -> WPABI menu item. (Taking suggestions for a better menu name.)
 
