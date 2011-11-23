@@ -5,7 +5,7 @@
 Plugin Name:  WordPress Admin Bar Improved
 Plugin URI:   http://www.electriceasel.com/wpabi
 Description:  A set of custom tweaks to the WordPress Admin Bar that was introduced in WP3.1
-Version:      3.3.3
+Version:      3.3.4
 Author:       dilbert4life, electriceasel
 Author URI:   http://www.electriceasel.com/team-member/don-gilbert
 
@@ -29,7 +29,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 **************************************************************************/
 
 class WPAdminBarImproved {
-	private static $version = '3.3.3';
+	private static $version = '3.3.4';
 	private $textdomain = 'wpabi';
 	private $css_file;
 	private $js_file;
@@ -81,6 +81,11 @@ class WPAdminBarImproved {
 		
 		wp_enqueue_style('wpabi_css', plugins_url('wpabi.css', __FILE__), '', '2.0', 'all');
 		
+		if($this->options['custom_menu'])
+		{
+			$this->add_custom_menu();
+		}
+		
 		add_action('admin_bar_menu', array( &$this, 'manage_menu_items' ), 9998);
 		
 		$this->admin_page();
@@ -102,7 +107,7 @@ class WPAdminBarImproved {
 		}
 		else
 		{
-			$this->login_form_start = '<div id="wpadminbar" class="nojq">';
+			$this->login_form_start = '<div id="wpadminbar" class="nojq nojs">';
 		}
 	}
 	
@@ -121,6 +126,8 @@ class WPAdminBarImproved {
 				'reg_link' => 0,
 				'custom_menu' => 0,
 				'default_items' => array(
+					'wp-logo' => 1,
+					'blog-name' => 1,
 					'my-account-with-avatar' => 1,
 					'view-site' => 1,
 					'dashboard' => 1,
@@ -130,7 +137,8 @@ class WPAdminBarImproved {
 					'appearance' => 1,
 					'edit' => 1,
 					'get-shortlink' => 1,
-					'updates' => 1
+					'updates' => 1,
+					'search' => 1
 				)
 			);
 			add_option('wpabi_options', $defaults);
@@ -149,11 +157,12 @@ class WPAdminBarImproved {
 	
 	public function wpabi_options_validate($input)
 	{
+		// TODO: Validate the inputs, just for fun…. :(
 		return $input;
 	}
 	
 	public function manage_menu_items($wp_admin_bar)
-	{		
+	{				
 		foreach( (array) $this->options['default_items'] as $menu => $enabled)
 		{
 			if(!$enabled)
@@ -165,11 +174,6 @@ class WPAdminBarImproved {
 			{
 				$wp_admin_bar->remove_menu('my-account');
 			}
-		}
-		
-		if($this->options['custom_menu'])
-		{
-			$this->add_custom_menu();
 		}
 	}
 	
@@ -200,6 +204,15 @@ class WPAdminBarImproved {
 				$args['parent'] = 'wpabi_'.$menu_item->menu_item_parent;
 			}
 			$wp_admin_bar->add_menu($args);
+		}
+		// Little trick to keep search at the end of the menu
+		if(isset($wp_admin_bar->menu->search))
+		{
+			$tmp_search = $wp_admin_bar->menu->search;
+			unset($wp_admin_bar->menu->search);
+			$tmp_search = array_merge($tmp_search, array('id' => 'search'));
+			$wp_admin_bar->add_menu($tmp_search);
+			unset($tmp_search);
 		}
 	}
 	
@@ -458,8 +471,26 @@ class WPAdminBarImproved {
             	</select>
             	<p><em><?php _e('When you enable this option, you will get a new location added to your "Theme Locations" box on your Appearance -> Menus admin page called "Admin Bar Improved." Use this as you would any other menu location for your site. Create a new menu on the Menus admin page, and name it whatever you\'d like, just keep it easy to identify. Add whatever items to that menu that you want. Nested menu items will work as expected. When you\'re finished, select the menu you created from the select list under the "Admin Bar Improved" theme location. Once completed, (and once you refresh the page, or navigate to another page) you will see that the items you added are now in your admin bar. Good job!', $this->textdomain); ?></em></p>
            	</li>
-           	
+					
            	<li><h3>Default Menu Items:</h3></li>
+           	
+           	<li class="wp-logo">
+           		<label for="wp-logo"><?php _e('WP Logo', $this->textdomain); ?>:</label>
+           		<select name="wpabi_options[default_items][wp-logo]" id="wp-logo">
+            		<option value="1" <?php selected($this->options['default_items']['wp-logo'], '1') ?>>Enabled</option>
+            		<option value="0" <?php selected($this->options['default_items']['wp-logo'], '0') ?>>Disabled</option>
+           		</select>
+           	</li>
+           	
+           	
+           	<li class="blog-name">
+           		<label for="blog-name"><?php _e('Blog Name', $this->textdomain); ?>:</label>
+           		<select name="wpabi_options[default_items][blog-name]" id="blog-name">
+            		<option value="1" <?php selected($this->options['default_items']['blog-name'], '1') ?>>Enabled</option>
+            		<option value="0" <?php selected($this->options['default_items']['blog-name'], '0') ?>>Disabled</option>
+           		</select>
+           	</li>
+           	
            	<li class="my-account-with-avatar">
            		<label for="my-account-with-avatar"><?php _e('My Account', $this->textdomain); ?>:</label>
            		<select name="wpabi_options[default_items][my-account-with-avatar]" id="my-account-with-avatar">
@@ -537,6 +568,14 @@ class WPAdminBarImproved {
            		<select name="wpabi_options[default_items][updates]" id="updates">
             		<option value="1" <?php selected($this->options['default_items']['updates'], '1') ?>>Enabled</option>
             		<option value="0" <?php selected($this->options['default_items']['updates'], '0') ?>>Disabled</option>
+           		</select>
+           	</li>
+           	
+           	<li class="search-field">
+           		<label for="search"><?php _e('Search Field', $this->textdomain); ?>:</label>
+           		<select name="wpabi_options[default_items][search]" id="search">
+            		<option value="1" <?php selected($this->options['default_items']['search'], '1') ?>>Enabled</option>
+            		<option value="0" <?php selected($this->options['default_items']['search'], '0') ?>>Disabled</option>
            		</select>
            	</li>
            	
