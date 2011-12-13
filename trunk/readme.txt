@@ -2,7 +2,7 @@
 Contributors: dilbert4life, electriceasel
 Tags: admin bar, top, login form, 3.1+, ajax, search
 Requires at least: 3.1
-Tested up to: 3.3-beta3
+Tested up to: 3.2.1
 Stable tag: 3.3.4
 
 A set of custom tweaks to the WordPress Admin Bar that was introduced in WP3.1.
@@ -10,6 +10,8 @@ A set of custom tweaks to the WordPress Admin Bar that was introduced in WP3.1.
 == Description ==
 
 This plugin has been completely re-written to interface with the WP3.1 admin bar, and adds some much requested / great features to the WP Admin Bar.
+
+**Please note that this is the last version that will work with WordPress 3.2.1 or less. The next version will require WordPress 3.3 or greater.**
 
 Check the post on this plugin over at our site, [Electric Easel](http://www.electriceasel.com/plugins/wordpress-admin-bar-improved), for instructions, updates, and other news.
 
